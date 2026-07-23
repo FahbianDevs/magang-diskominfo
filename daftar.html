@@ -1,59 +1,85 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Halaman pendaftaran akun resmi portal Magang & PKL Dinas Komunikasi dan Informatika Kabupaten Kutai Kartanegara.">
+    <meta name="description"
+        content="Halaman pendaftaran akun resmi portal Magang & PKL Dinas Komunikasi dan Informatika Kabupaten Kutai Kartanegara.">
     <title>Daftar Akun - Magang & PKL Diskominfo Kukar</title>
-    
+
     <!-- Premium Fonts from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen antialiased flex items-stretch">
 
     <div class="w-full min-h-screen flex flex-col lg:flex-row">
-        
+
         <!-- KOLOM KIRI: FORMULIR -->
         <main class="w-full lg:w-[48%] bg-white flex flex-col justify-center px-8 md:px-16 py-12 lg:py-16">
             <div class="max-w-md w-full mx-auto">
                 <!-- Header -->
                 <div class="mb-10">
                     <h1 class="font-sans text-4xl font-extrabold text-slate-900 tracking-tight mb-2">Daftar Akun</h1>
-                    <p class="text-sm text-slate-500 font-medium">Daftarkan akunmu dan nikmati akses ke semua informasi.</p>
+                    <p class="text-sm text-slate-500 font-medium">Daftarkan akunmu dan nikmati akses ke semua informasi.
+                    </p>
                 </div>
-                
+
                 <!-- Formulir -->
                 <form id="register-account-form" class="space-y-5">
                     <!-- Nama Lengkap -->
                     <div class="flex flex-col gap-2">
-                        <label for="reg-name" class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Nama Lengkap</label>
-                        <input type="text" id="reg-name" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium placeholder-slate-400" placeholder="Maura Resky" required>
+                        <label for="reg-name"
+                            class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Nama
+                            Lengkap</label>
+                        <input type="text" id="reg-name"
+                            class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium placeholder-slate-400"
+                            placeholder="Maura Resky" required>
                     </div>
 
                     <!-- Nomor Induk -->
                     <div class="flex flex-col gap-2">
-                        <label for="reg-nis" class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Nomor Induk Siswa/Mahasiswa</label>
-                        <input type="text" id="reg-nis" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium placeholder-slate-400" placeholder="1234567890" required>
+                        <label for="reg-nis"
+                            class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Nomor Induk
+                            Siswa/Mahasiswa</label>
+                        <input type="text" id="reg-nis"
+                            class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium placeholder-slate-400"
+                            placeholder="1234567890" required>
                     </div>
 
                     <!-- Email -->
                     <div class="flex flex-col gap-2">
-                        <label for="reg-email" class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">E-mail</label>
-                        <input type="email" id="reg-email" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium placeholder-slate-400" placeholder="maura@gmail.com" required>
+                        <label for="reg-email"
+                            class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">E-mail</label>
+                        <input type="email" id="reg-email"
+                            class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium placeholder-slate-400"
+                            placeholder="maura@gmail.com" required>
                     </div>
 
                     <!-- Kata Sandi -->
                     <div class="flex flex-col gap-2">
-                        <label for="reg-password" class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Kata Sandi</label>
+                        <label for="reg-password"
+                            class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Kata
+                            Sandi</label>
                         <div class="relative w-full">
-                            <input type="password" id="reg-password" class="font-sans text-sm pl-4 pr-12 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium" required>
-                            <button type="button" id="toggle-password" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors focus:outline-none" aria-label="Tampilkan Kata Sandi">
+                            <input type="password" id="reg-password"
+                                class="font-sans text-sm pl-4 pr-12 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium"
+                                required>
+                            <button type="button" id="toggle-password"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors focus:outline-none"
+                                aria-label="Tampilkan Kata Sandi">
                                 <!-- Eye SVG Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
                             </button>
                         </div>
@@ -61,14 +87,23 @@
 
                     <!-- Konfirmasi Kata Sandi -->
                     <div class="flex flex-col gap-2">
-                        <label for="reg-password-confirm" class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Konfirmasi Kata Sandi</label>
+                        <label for="reg-password-confirm"
+                            class="font-sans font-bold text-xs text-slate-500 uppercase tracking-wider">Konfirmasi Kata
+                            Sandi</label>
                         <div class="relative w-full">
-                            <input type="password" id="reg-password-confirm" class="font-sans text-sm pl-4 pr-12 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium" required>
-                            <button type="button" id="toggle-confirm-password" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors focus:outline-none" aria-label="Tampilkan Konfirmasi Kata Sandi">
+                            <input type="password" id="reg-password-confirm"
+                                class="font-sans text-sm pl-4 pr-12 py-3.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium"
+                                required>
+                            <button type="button" id="toggle-confirm-password"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors focus:outline-none"
+                                aria-label="Tampilkan Konfirmasi Kata Sandi">
                                 <!-- Eye SVG Icon -->
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
                             </button>
                         </div>
@@ -78,29 +113,38 @@
                     <div id="form-status-alert" class="hidden text-sm font-semibold p-4 rounded-xl border"></div>
 
                     <!-- Button Daftar -->
-                    <button type="submit" class="w-full py-4 rounded-xl bg-[#2a4d87] text-white font-sans font-bold hover:bg-[#1f3b68] hover:shadow-lg transition-all duration-300 tracking-wide mt-2" id="submit-reg-btn">
+                    <button type="submit"
+                        class="w-full py-4 rounded-xl bg-[#2a4d87] text-white font-sans font-bold hover:bg-[#1f3b68] hover:shadow-lg transition-all duration-300 tracking-wide mt-2"
+                        id="submit-reg-btn">
                         Daftar
                     </button>
                 </form>
 
                 <!-- Login Redirect Link -->
                 <div class="mt-8 text-center text-sm font-semibold text-slate-500">
-                    Sudah punya akun? <a href="/" class="text-[#009bde] hover:underline" id="btn-login-redirect">Masuk</a>
+                    Sudah punya akun? <a href="/" class="text-[#009bde] hover:underline"
+                        id="btn-login-redirect">Masuk</a>
                 </div>
             </div>
         </main>
-        
+
         <!-- KOLOM KANAN: PANEL VISUAL -->
-        <section class="hidden lg:flex w-full lg:w-[52%] bg-[#1c3c6f] relative flex-col items-center justify-between p-12 text-white overflow-hidden select-none">
-            
+        <section
+            class="hidden lg:flex w-full lg:w-[52%] bg-[#1c3c6f] relative flex-col items-center justify-between p-12 text-white overflow-hidden select-none">
+
             <!-- Elemen Dekoratif Lingkaran/Wavy (Radial Gradients) -->
-            <div class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border-[10px] border-white/5 opacity-40"></div>
-            <div class="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full border-[10px] border-white/5 opacity-30"></div>
+            <div
+                class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border-[10px] border-white/5 opacity-40">
+            </div>
+            <div
+                class="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full border-[10px] border-white/5 opacity-30">
+            </div>
             <div class="absolute bottom-20 -left-20 w-[300px] h-[300px] rounded-full bg-blue-500/10 blur-3xl"></div>
-            
+
             <!-- Branding Text (Top Right/Center) -->
             <div class="w-full max-w-lg mx-auto text-left z-10 pt-10">
-                <p class="font-sans font-extrabold text-[2.5rem] leading-none mb-4 uppercase tracking-wide text-white drop-shadow-md">
+                <p
+                    class="font-sans font-extrabold text-[2.5rem] leading-none mb-4 uppercase tracking-wide text-white drop-shadow-md">
                     MAGANG/PKL<br>DISKOMINFO KUKAR
                 </p>
                 <p class="text-sm font-medium text-slate-200/90 leading-relaxed max-w-md">
@@ -109,29 +153,33 @@
             </div>
 
             <!-- Mockup Browser Preview Landing Page (Bottom) -->
-            <div class="w-full max-w-lg mx-auto z-10 translate-y-16 shadow-2xl rounded-2xl overflow-hidden border border-white/10 bg-slate-900/60 backdrop-blur-sm transition-transform duration-500 hover:translate-y-8">
+            <div
+                class="w-full max-w-lg mx-auto z-10 translate-y-16 shadow-2xl rounded-2xl overflow-hidden border border-white/10 bg-slate-900/60 backdrop-blur-sm transition-transform duration-500 hover:translate-y-8">
                 <!-- Browser Header (Title Bar) -->
                 <div class="bg-white px-4 py-3 flex items-center justify-between border-b border-slate-100">
                     <div class="flex items-center gap-1.5">
-                        <img src="/assets/logo.png" alt="Logo" class="h-5 w-auto">
+                        <img src="/assets/logo-kominfo.png" alt="Logo" class="h-5 w-auto">
                         <span class="text-[9px] font-extrabold text-slate-800 leading-none font-sans">Diskominfo</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="px-2 py-0.5 rounded-full bg-slate-900 text-white font-bold text-[7px]">Daftar</span>
+                        <span
+                            class="px-2 py-0.5 rounded-full bg-slate-900 text-white font-bold text-[7px]">Daftar</span>
                         <span class="text-[7px] text-slate-800 font-bold">Masuk</span>
                     </div>
                 </div>
                 <!-- Screen Content (Home screenshot) -->
                 <div class="relative overflow-hidden aspect-[4/3] bg-slate-950">
-                    <img src="/assets/landing-preview.png" alt="Beranda Preview" class="w-full h-full object-cover object-top opacity-95">
+                    <img src="/assets/landing-preview.png" alt="Beranda Preview"
+                        class="w-full h-full object-cover object-top opacity-95">
                 </div>
             </div>
-            
+
         </section>
-        
+
     </div>
 
     <!-- Script Entrypoint -->
     <script type="module" src="/src/daftar.js"></script>
 </body>
+
 </html>
