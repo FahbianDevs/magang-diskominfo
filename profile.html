@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard User Portal Magang & PKL Dinas Komunikasi dan Informatika Kabupaten Kutai Kartanegara.">
+    <title>Profile User - Magang & PKL Diskominfo Kukar</title>
+    
+    <!-- Premium Fonts from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen antialiased flex flex-col">
+
+    <!-- HEADER ATAS (NAVBAR DASHBOARD) -->
+    <header class="bg-white border-b border-slate-200 fixed top-0 left-0 w-full h-20 z-40 flex items-center px-6 justify-between">
+        <!-- Logo Brand -->
+        <a href="/" class="flex items-center gap-3">
+            <img src="/assets/logo.png" alt="Logo Diskominfo Kukar" class="h-10 w-auto">
+            <div class="hidden sm:flex flex-col">
+                <span class="font-sans font-extrabold text-lg text-slate-900 leading-none">Diskominfo</span>
+                <span class="text-[9px] font-semibold text-slate-500 tracking-wider">KAB. KUTAI KARTANEGARA</span>
+            </div>
+        </a>
+
+        <!-- User Controls (Bell & Avatar Dropdown) -->
+        <div class="flex items-center gap-6">
+            <!-- Notification Bell -->
+            <button class="relative text-slate-400 hover:text-slate-600 transition-colors p-2 focus:outline-none" aria-label="Notifikasi">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
+            </button>
+
+            <!-- User Menu Dropdown trigger -->
+            <div class="relative">
+                <button id="user-menu-btn" class="flex items-center gap-3 focus:outline-none cursor-pointer">
+                    <img src="/assets/alumni-amanda.png" alt="Foto Maura" class="w-9 h-9 rounded-full object-cover border border-slate-200">
+                    <span class="font-semibold text-sm text-slate-700 hidden sm:inline">Maura</span>
+                    <!-- Chevron Down SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-550 text-slate-400 transition-transform duration-200" id="user-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                
+                <!-- Dropdown Card -->
+                <div id="user-dropdown" class="hidden absolute right-0 mt-3 w-48 bg-white border border-slate-200 rounded-xl shadow-lg py-2 z-50 animate-fade-in-down">
+                    <a href="/" class="flex items-center gap-3 px-4 py-2 text-sm text-slate-650 text-slate-700 hover:bg-slate-50 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        Kembali Ke Beranda
+                    </a>
+                    <hr class="border-slate-100 my-1">
+                    <a href="/" class="flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Keluar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER UTAMA -->
+    <div class="flex-grow pt-20 flex flex-col md:flex-row items-stretch min-h-screen">
+        
+        <!-- SIDEBAR KIRI (MENU) -->
+        <aside class="w-full md:w-64 bg-white border-r border-slate-200 flex-shrink-0 p-6 flex flex-col justify-between">
+            <div class="space-y-6">
+                <!-- Title Menu -->
+                <p class="font-sans font-bold text-xs text-slate-450 text-slate-400 uppercase tracking-widest pl-2">Menu</p>
+                
+                <!-- Menu Links -->
+                <nav class="flex flex-col gap-2" id="sidebar-nav">
+                    <!-- Profile Tab Button (Active by default) -->
+                    <button data-tab="profile" class="w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 select-none cursor-pointer border border-[#1c3c6f]/10 bg-[#f0f4fa] text-[#1c3c6f]" id="tab-btn-profile">
+                        <!-- Profile Card Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-7 4h10M5 14h3m-3 2h6" />
+                        </svg>
+                        PROFILE
+                    </button>
+
+                    <!-- Daftar Tab Button -->
+                    <button data-tab="daftar" class="w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 select-none cursor-pointer border border-transparent bg-transparent text-slate-450 hover:bg-slate-50 text-slate-400" id="tab-btn-daftar">
+                        <!-- Register Document Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        DAFTAR
+                    </button>
+
+                    <!-- Status Tab Button -->
+                    <button data-tab="status" class="w-full flex items-center gap-3.5 px-4 py-3 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 select-none cursor-pointer border border-transparent bg-transparent text-slate-450 hover:bg-slate-50 text-slate-400" id="tab-btn-status">
+                        <!-- Clock/Status Tracking Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.2" />
+                        </svg>
+                        STATUS
+                    </button>
+                </nav>
+            </div>
+            
+            <!-- Quick Help Hint -->
+            <div class="hidden md:block p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs text-slate-500 leading-relaxed">
+                Butuh bantuan? Silakan hubungi admin Diskominfo melalui menu bantuan atau menu kontak pada beranda.
+            </div>
+        </aside>
+
+        <!-- AREA KONTEN UTAMA (KANAN) -->
+        <main class="flex-grow flex flex-col overflow-y-auto">
+            
+            <!-- BANNER BIRU TUA DI ATAS -->
+            <section class="h-44 bg-gradient-to-r from-[#1c3c6f] via-[#152e55] to-[#0c1c38] flex items-center justify-between px-8 md:px-12 text-white relative overflow-hidden select-none">
+                <!-- Emblem Spiral/Circle Decorative -->
+                <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full border-[8px] border-white/5 opacity-30"></div>
+                <div class="absolute right-6 -bottom-16 w-60 h-60 rounded-full border-[8px] border-white/5 opacity-40"></div>
+                
+                <h2 class="font-sans font-extrabold text-3xl md:text-[2.25rem] tracking-wider drop-shadow-md z-10" id="banner-title">
+                    PROFILE
+                </h2>
+                
+                <!-- Chevron Motif on the Right -->
+                <div class="hidden sm:flex flex-col gap-1 items-end opacity-20 pr-4 z-10 text-xl font-bold">
+                    <span>• • •</span>
+                    <span>KUTAI KARTANEGARA</span>
+                </div>
+            </section>
+
+            <!-- KONTEN FLUID (FORMULIR/DASHBOARD CARDS) -->
+            <div class="p-6 md:p-10 max-w-4xl w-full mx-auto flex-grow pb-24">
+                
+                <!-- TAB 1: PROFILE CONTENT (FORMULIR EDIT PROFIL) -->
+                <article id="tab-content-profile" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <h3 class="font-sans font-bold text-lg text-slate-900">Informasi Pribadi</h3>
+                    </div>
+
+                    <form id="edit-profile-form" class="space-y-6">
+                        <!-- Foto Profil upload -->
+                        <div class="flex flex-col gap-2">
+                            <label class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                Foto Profil <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex items-center gap-4 w-full">
+                                <div class="relative flex-grow">
+                                    <input type="text" id="avatar-filename" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium" value="foto_profile.png" readonly>
+                                    <input type="file" id="avatar-file-input" class="hidden" accept="image/*">
+                                </div>
+                                <button type="button" id="btn-change-avatar" class="px-6 py-3 rounded-xl bg-[#2a4d87] text-white font-sans text-xs font-bold hover:bg-[#1f3b68] hover:shadow-md transition-all duration-300 tracking-wider whitespace-nowrap">
+                                    Ganti File
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Nama Lengkap -->
+                        <div class="flex flex-col gap-2">
+                            <label for="profile-name" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                Nama Lengkap <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="profile-name" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-950 font-medium" value="Maura Resky" required>
+                        </div>
+
+                        <!-- Jenis Kelamin -->
+                        <div class="flex flex-col gap-2">
+                            <label for="profile-gender" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                Jenis Kelamin <span class="text-red-500">*</span>
+                            </label>
+                            <div class="relative">
+                                <select id="profile-gender" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-955 text-slate-900 font-medium appearance-none" required>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan" selected>Perempuan</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- No Telephone -->
+                        <div class="flex flex-col gap-2">
+                            <label for="profile-phone" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                No. Telephone <span class="text-red-500">*</span>
+                            </label>
+                            <input type="tel" id="profile-phone" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-950 font-medium" value="081234567890" required>
+                        </div>
+
+                        <!-- Nomor Induk -->
+                        <div class="flex flex-col gap-2">
+                            <label for="profile-nis" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                Nomor Induk Siswa / Mahasiswa <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="profile-nis" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-950 font-medium" value="1234567890" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex flex-col gap-2">
+                            <label for="profile-email" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                Email <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" id="profile-email" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium" value="maura@gmail.com" required>
+                        </div>
+
+                        <!-- Kata Sandi -->
+                        <div class="flex flex-col gap-2">
+                            <label for="profile-password" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">
+                                Kata Sandi <span class="text-red-500">*</span>
+                            </label>
+                            <input type="password" id="profile-password" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium" value="maura123" required>
+                        </div>
+
+                        <!-- Alert feedback -->
+                        <div id="profile-status-alert" class="hidden text-sm font-semibold p-4 rounded-xl border"></div>
+
+                        <!-- Button Simpan -->
+                        <button type="submit" class="w-full py-4 rounded-xl bg-[#2a4d87] text-white font-sans font-bold hover:bg-[#1f3b68] hover:shadow-md transition-all duration-300 tracking-wide mt-4" id="btn-save-profile">
+                            Simpan
+                        </button>
+                    </form>
+                </article>
+
+                <!-- TAB 2: DAFTAR CONTENT (FORMULIR PENGAJUAN MAGANG) -->
+                <article id="tab-content-daftar" class="hidden bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 space-y-6">
+                    <div class="border-b border-slate-100 pb-4">
+                        <h3 class="font-sans font-bold text-lg text-slate-900">Form Pendaftaran Magang / PKL</h3>
+                        <p class="text-xs text-slate-400 mt-1">Lengkapi berkas administrasi Anda untuk memulai proses seleksi berkas.</p>
+                    </div>
+
+                    <form id="submit-internship-form" class="space-y-6">
+                        <!-- Pilihan Bidang -->
+                        <div class="flex flex-col gap-2">
+                            <label for="intern-bidang" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">Pilih Bidang Magang</label>
+                            <div class="relative">
+                                <select id="intern-bidang" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-900 font-medium appearance-none" required>
+                                    <!-- Diisi via JS atau manual -->
+                                    <option value="2">Bidang Aplikasi Informatika (Tersedia: 1)</option>
+                                    <option value="3">Bidang Statistik (Tersedia: 3)</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Asal Institusi -->
+                        <div class="flex flex-col gap-2">
+                            <label for="intern-inst" class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">Asal Sekolah / Universitas</label>
+                            <input type="text" id="intern-inst" class="font-sans text-sm px-4 py-3.5 rounded-xl border border-slate-200 bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 outline-none transition-all w-full text-slate-950 font-medium" placeholder="Masukkan nama sekolah atau universitas" required>
+                        </div>
+
+                        <!-- Dokumen Surat Pengantar (PDF) -->
+                        <div class="flex flex-col gap-2">
+                            <label class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">Surat Pengantar Kampus / Sekolah (PDF)</label>
+                            <div class="border-2 border-dashed border-slate-200 rounded-xl p-6 flex flex-col items-center justify-center hover:bg-slate-50 transition-colors cursor-pointer" id="dropzone-surat">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                                <span class="text-xs text-slate-500 font-semibold" id="filename-surat">Klik atau seret file PDF disini</span>
+                                <input type="file" id="file-surat" class="hidden" accept=".pdf">
+                            </div>
+                        </div>
+
+                        <!-- Dokumen CV (PDF) -->
+                        <div class="flex flex-col gap-2">
+                            <label class="font-sans font-bold text-xs text-slate-900 uppercase tracking-wider">Curriculum Vitae (PDF)</label>
+                            <div class="border-2 border-dashed border-slate-200 rounded-xl p-6 flex flex-col items-center justify-center hover:bg-slate-50 transition-colors cursor-pointer" id="dropzone-cv">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-slate-400 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                                </svg>
+                                <span class="text-xs text-slate-500 font-semibold" id="filename-cv">Klik atau seret file PDF disini</span>
+                                <input type="file" id="file-cv" class="hidden" accept=".pdf">
+                            </div>
+                        </div>
+
+                        <!-- Alert feedback -->
+                        <div id="daftar-status-alert" class="hidden text-sm font-semibold p-4 rounded-xl border"></div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="w-full py-4 rounded-xl bg-[#2a4d87] text-white font-sans font-bold hover:bg-[#1f3b68] hover:shadow-md transition-all duration-300 tracking-wide" id="btn-submit-intern">
+                            Ajukan Pendaftaran
+                        </button>
+                    </form>
+                </article>
+
+                <!-- TAB 3: STATUS CONTENT (TIMELINE STATUS PENGAJUAN) -->
+                <article id="tab-content-status" class="hidden bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-slate-100 space-y-8">
+                    <div class="border-b border-slate-100 pb-4">
+                        <h3 class="font-sans font-bold text-lg text-slate-900">Status Pengajuan Magang / PKL</h3>
+                        <p class="text-xs text-slate-400 mt-1">Pantau perkembangan status pengajuan magang Anda di bawah ini secara realtime.</p>
+                    </div>
+
+                    <!-- Pendaftaran Info Summary Card -->
+                    <div class="p-5 bg-[#f0f4fa]/40 border border-[#f0f4fa] rounded-2xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <span class="text-[10px] font-extrabold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full uppercase tracking-wider">Aktif</span>
+                            <h4 class="font-bold text-slate-900 mt-2 text-base" id="summary-bidang">Bidang Aplikasi Informatika</h4>
+                            <p class="text-xs text-slate-500 mt-1">Diajukan oleh: Maura Resky | Tanggal: 23 Juli 2026</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-450 text-slate-400">Status Terkini</span>
+                            <p class="font-bold text-emerald-600 text-sm mt-0.5" id="summary-status-label">Seleksi Berkas</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Vertical -->
+                    <div class="relative border-l-2 border-slate-150 ml-4 pl-8 space-y-10 py-2">
+                        <!-- Step 1: Terkirim (Done) -->
+                        <div class="relative">
+                            <!-- Bullet Active Checkmark -->
+                            <div class="absolute -left-[43px] top-1 bg-emerald-500 text-white rounded-full w-[24px] h-[24px] flex items-center justify-center border-4 border-white shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-slate-900">Pendaftaran Terkirim</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">23 Juli 2026, 09:40 WIB</p>
+                                <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                    Berkas pendaftaran Anda telah berhasil diunggah ke sistem dan siap untuk divalidasi oleh administrator.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Seleksi Berkas (Active) -->
+                        <div class="relative">
+                            <!-- Bullet Current -->
+                            <div class="absolute -left-[43px] top-1 bg-blue-600 text-white rounded-full w-[24px] h-[24px] flex items-center justify-center border-4 border-white shadow animate-pulse">
+                                <div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-blue-600">Verifikasi & Seleksi Berkas</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Sedang Berlangsung</p>
+                                <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                    Tim Kepegawaian Diskominfo Kukar sedang melakukan tinjauan berkas administrasi (Surat Pengantar & CV) yang Anda kirimkan.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Wawancara (Pending) -->
+                        <div class="relative opacity-60">
+                            <!-- Bullet Pending -->
+                            <div class="absolute -left-[43px] top-1 bg-slate-200 text-slate-400 rounded-full w-[24px] h-[24px] flex items-center justify-center border-4 border-white">
+                                <div class="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-slate-800">Sesi Wawancara</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Menunggu Verifikasi Berkas</p>
+                                <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                    Jika berkas administrasi disetujui, Anda akan dijadwalkan untuk mengikuti wawancara kompetensi dengan Kepala Bidang terkait.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Selesai / Hasil (Pending) -->
+                        <div class="relative opacity-60">
+                            <!-- Bullet Pending -->
+                            <div class="absolute -left-[43px] top-1 bg-slate-200 text-slate-400 rounded-full w-[24px] h-[24px] flex items-center justify-center border-4 border-white">
+                                <div class="w-1.5 h-1.5 bg-slate-400 rounded-full"></div>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-slate-800">Keputusan Akhir</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Menunggu Jadwal Wawancara</p>
+                                <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                                    Status final pengumuman diterima/ditolaknya pengajuan magang Anda di Dinas Komunikasi dan Informatika Kukar.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Entrypoint -->
+    <script type="module" src="/src/profile.js"></script>
+</body>
+</html>
