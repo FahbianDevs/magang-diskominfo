@@ -4,20 +4,18 @@
 import './style.css';
 import { API } from './api.js';
 
-// Jalankan saat DOM siap
-document.addEventListener("DOMContentLoaded", () => {
+// Inisialisasi aplikasi sekali saja secara aman
+function init() {
     initNavbar();
     initModals();
     loadBidangMagang();
     loadFaqs();
-});
+}
 
-// Jalankan immediately jika modul dimuat setelah DOM siap
-if (document.readyState === "interactive" || document.readyState === "complete") {
-    initNavbar();
-    initModals();
-    loadBidangMagang();
-    loadFaqs();
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+} else {
+    init();
 }
 
 /* ==========================================================================
@@ -280,12 +278,14 @@ async function loadBidangMagang() {
         selectBidang.innerHTML = '<option value="" disabled selected>Pilih bidang magang...</option>';
     }
 
-    data.forEach(item => {
+    // Helper untuk merender card bidang magang
+    const createCard = (item, isFeatured) => {
         const isAvailable = item.status.toLowerCase() === "tersedia";
         const badgeColor = isAvailable ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800";
         
         const card = document.createElement("div");
-        card.className = "bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 flex flex-col justify-between relative overflow-hidden group";
+        // Jika isFeatured true (untuk bidang ke-5), tambahkan kelas md:col-span-2 agar memenuhi baris bawah
+        card.className = `bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-305 transition-all duration-300 border border-slate-100 flex flex-col justify-between relative overflow-hidden group ${isFeatured ? 'md:col-span-2' : ''}`;
         card.innerHTML = `
             <div class="absolute left-0 top-0 w-1.5 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
             <div>
@@ -307,9 +307,19 @@ async function loadBidangMagang() {
                 </div>
             </div>
         `;
+        return card;
+    };
 
+    // Tampilkan 4 bidang pertama secara default
+    const initialData = data.slice(0, 4);
+    initialData.forEach(item => {
+        const card = createCard(item, false);
         container.appendChild(card);
+    });
 
+    // Masukkan semua bidang magang ke opsi pendaftaran dropdown (jika status Tersedia)
+    data.forEach(item => {
+        const isAvailable = item.status.toLowerCase() === "tersedia";
         if (selectBidang && isAvailable) {
             const option = document.createElement("option");
             option.value = item.id;
@@ -321,7 +331,17 @@ async function loadBidangMagang() {
     const btnLihatSemua = document.getElementById("btn-lihat-semua");
     if (btnLihatSemua) {
         btnLihatSemua.addEventListener("click", () => {
-            alert("Menampilkan semua data bidang magang. Saat ini seluruh bidang (" + data.length + ") sudah ditampilkan.");
+            // Render sisa bidang (indeks ke-4 ke atas)
+            const remainingData = data.slice(4);
+            remainingData.forEach((item, index) => {
+                // Untuk elemen ke-5 (indeks 0 dari sisa data), atur isFeatured = true agar tampil melebar penuh
+                const isFeatured = (index === 0); 
+                const card = createCard(item, isFeatured);
+                container.appendChild(card);
+            });
+
+            // Sembunyikan tombol "Lihat Semua"
+            btnLihatSemua.classList.add("hidden");
         });
     }
 }

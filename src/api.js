@@ -45,6 +45,14 @@ const MOCK_DATA = {
             kuota: 10,
             tersedia: 0,
             status: "Penuh"
+        },
+        {
+            id: 5,
+            nama: "Bidang Kesekretariatan",
+            deskripsi: "Mengurus tentang pelayanan administrasi persuratan, tata usaha, serta urusan perekonomian dan perlengkapan kantor.",
+            kuota: 10,
+            tersedia: 5,
+            status: "Tersedia"
         }
     ],
     faqs: [

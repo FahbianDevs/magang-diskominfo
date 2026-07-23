@@ -2,22 +2,22 @@
  * Controller Dashboard User - profile.html (Vite Module)
  */
 import './style.css';
+import { API } from './api.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+// Inisialisasi dashboard sekali saja secara aman
+function init() {
     initUserDropdown();
     initTabSystem();
     initProfileAvatarUpload();
     initEditProfileForm();
     initInternshipForm();
-});
+    loadInternshipFields();
+}
 
-// Jalankan immediately jika modul dimuat setelah DOM siap
-if (document.readyState === "interactive" || document.readyState === "complete") {
-    initUserDropdown();
-    initTabSystem();
-    initProfileAvatarUpload();
-    initEditProfileForm();
-    initInternshipForm();
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+} else {
+    init();
 }
 
 /* ==========================================================================
@@ -250,6 +250,28 @@ function initInternshipForm() {
                 const statusTabBtn = document.getElementById("tab-btn-status");
                 if (statusTabBtn) statusTabBtn.click();
             }, 2000);
+        });
+    }
+}
+
+/* ==========================================================================
+   6. DYNAMICALLY LOAD INTERNSHIP FIELDS FOR FORM
+   ========================================================================== */
+async function loadInternshipFields() {
+    const selectBidang = document.getElementById("intern-bidang");
+    if (!selectBidang) return;
+
+    const response = await API.getBidang();
+    if (response.success) {
+        selectBidang.innerHTML = '<option value="" disabled selected>Pilih bidang magang...</option>';
+        response.data.forEach(item => {
+            const isAvailable = item.status.toLowerCase() === "tersedia";
+            if (isAvailable) {
+                const option = document.createElement("option");
+                option.value = item.id;
+                option.textContent = `${item.nama} (Tersedia: ${item.tersedia})`;
+                selectBidang.appendChild(option);
+            }
         });
     }
 }
