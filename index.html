@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portal Pendaftaran Magang dan PKL resmi di Dinas Komunikasi dan Informatika (Diskominfo) Kabupaten Kutai Kartanegara. Temukan bidang yang sesuai dan raih pengalaman berharga.">
+    <meta name="description"
+        content="Portal Pendaftaran Magang dan PKL resmi di Dinas Komunikasi dan Informatika (Diskominfo) Kabupaten Kutai Kartanegara. Temukan bidang yang sesuai dan raih pengalaman berharga.">
     <title>Magang & PKL Diskominfo Kutai Kartanegara</title>
-    
+
     <!-- Premium Fonts from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden pt-20">
 
     <!-- NAVIGASI / NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300" id="main-navbar">
+    <nav class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm transition-all duration-300"
+        id="main-navbar">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
                 <img src="/assets/logo.png" alt="Logo Diskominfo Kukar" class="h-10 w-auto">
@@ -23,46 +29,66 @@
                     <span class="text-[10px] font-semibold text-slate-500 tracking-wider">KAB. KUTAI KARTANEGARA</span>
                 </div>
             </a>
-            
-            <button class="md:hidden flex flex-col gap-1.5 bg-transparent border-none cursor-pointer p-1" id="nav-menu-toggle" aria-label="Toggle navigation menu">
+
+            <button class="md:hidden flex flex-col gap-1.5 bg-transparent border-none cursor-pointer p-1"
+                id="nav-menu-toggle" aria-label="Toggle navigation menu">
                 <span class="w-6 h-0.5 bg-slate-900 rounded-sm transition-all duration-300"></span>
                 <span class="w-6 h-0.5 bg-slate-900 rounded-sm transition-all duration-300"></span>
                 <span class="w-6 h-0.5 bg-slate-900 rounded-sm transition-all duration-300"></span>
             </button>
-            
+
             <div class="hidden md:flex items-center gap-10" id="nav-menu">
                 <ul class="flex flex-col md:flex-row gap-8">
-                    <li><a href="#" class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200 active-link">Beranda</a></li>
-                    <li><a href="#bidang" class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200">Pilihan Bidang</a></li>
-                    <li><a href="#testimoni" class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200">Testimoni</a></li>
-                    <li><a href="#faq" class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200">FAQ</a></li>
+                    <li><a href="#"
+                            class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200 active-link">Beranda</a>
+                    </li>
+                    <li><a href="#bidang"
+                            class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200">Pilihan
+                            Bidang</a></li>
+                    <li><a href="#testimoni"
+                            class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200">Testimoni</a>
+                    </li>
+                    <li><a href="#faq"
+                            class="nav-link font-semibold text-sm text-slate-600 hover:text-blue-600 transition-colors duration-200">FAQ</a>
+                    </li>
                 </ul>
                 <div class="flex items-center gap-4">
-                    <a href="#masuk" class="px-6 py-2.5 rounded-full border-2 border-slate-900 text-slate-900 font-bold text-sm hover:bg-slate-900 hover:text-white transition-all duration-300" id="btn-login">Masuk</a>
-                    <a href="/daftar.html" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-all duration-300 shadow-md shadow-slate-900/10" id="btn-register-top">Daftar</a>
+                    <a href="#masuk"
+                        class="px-6 py-2.5 rounded-full border-2 border-slate-900 text-slate-900 font-bold text-sm hover:bg-slate-900 hover:text-white transition-all duration-300"
+                        id="btn-login">Masuk</a>
+                    <a href="/daftar.html"
+                        class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-all duration-300 shadow-md shadow-slate-900/10"
+                        id="btn-register-top">Daftar</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="relative min-h-screen -mt-20 flex items-center bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-bg.png');">
+    <header class="relative min-h-screen -mt-20 flex items-center bg-cover bg-center bg-no-repeat"
+        style="background-image: url('/assets/kantor diskominfo.jpg');">
         <div class="absolute inset-0 bg-gradient-to-br from-slate-950/95 via-slate-900/90 to-slate-900/80 z-1"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-6 py-28 text-center flex flex-col items-center">
-            <p class="font-sans font-bold text-xs tracking-widest text-amber-500 bg-amber-500/15 px-4 py-1.5 rounded-full border border-amber-500/30 mb-6 uppercase">
+            <p
+                class="font-sans font-bold text-xs tracking-widest text-amber-500 bg-amber-500/15 px-4 py-1.5 rounded-full border border-amber-500/30 mb-6 uppercase">
                 DISKOMINFO KAB. KUTAI KARTANEGARA
             </p>
-            <h1 class="font-sans text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-white mb-6 drop-shadow-md">
+            <h1
+                class="font-sans text-4xl md:text-6xl font-extrabold leading-tight tracking-tight text-white mb-6 drop-shadow-md">
                 Magang/PKL<br>Diskominfo Kukar
             </h1>
-            <p class="text-base md:text-xl font-normal leading-relaxed max-w-2xl text-slate-350 mb-10 opacity-90 text-slate-300">
+            <p
+                class="text-base md:text-xl font-normal leading-relaxed max-w-2xl text-slate-350 mb-10 opacity-90 text-slate-300">
                 Platform Pengajuan Magang Maupun PKL Di Dinas Komunikasi dan Informatika Kabupaten Kutai Kartanegara
             </p>
             <div class="flex flex-col sm:flex-row gap-5">
-                <a href="#bidang" class="px-8 py-3.5 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-100 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-sm md:text-base">
+                <a href="#bidang"
+                    class="px-8 py-3.5 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-100 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-sm md:text-base">
                     Jelajahi Informasi
                 </a>
-                <a href="/daftar.html" class="px-8 py-3.5 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-slate-900 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-sm md:text-base" id="btn-register-hero">
+                <a href="/daftar.html"
+                    class="px-8 py-3.5 rounded-full border-2 border-white text-white font-bold hover:bg-white hover:text-slate-900 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-sm md:text-base"
+                    id="btn-register-hero">
                     Daftar Sekarang
                 </a>
             </div>
@@ -74,42 +100,50 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <p class="text-blue-600 font-bold text-sm tracking-widest uppercase mb-3 block">Apa Kata Mereka?</p>
-                <h2 class="font-sans text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">TESTIMONI DARI ALUMNI</h2>
+                <h2 class="font-sans text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">TESTIMONI DARI
+                    ALUMNI</h2>
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mt-10">
                 <!-- Testimoni 1 (Kiri) -->
-                <div class="bg-slate-55 bg-slate-50 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-slate-100/50">
+                <div
+                    class="bg-slate-55 bg-slate-50 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-slate-100/50">
                     <span class="font-serif text-6xl text-blue-500 opacity-20 -mb-6 -mt-4 block">“</span>
                     <p class="text-[1.05rem] leading-relaxed text-slate-700 font-medium mb-8">
-                        Saya Merasa Lebih Percaya Diri Karena Mendapatkan Pengalaman Praktik Yang Tidak Saya Peroleh Di Perkuliahan.
+                        Saya Merasa Lebih Percaya Diri Karena Mendapatkan Pengalaman Praktik Yang Tidak Saya Peroleh Di
+                        Perkuliahan.
                     </p>
                     <div class="flex items-center justify-between border-t border-slate-200/50 pt-5">
                         <div class="flex flex-col">
                             <h4 class="font-sans font-bold text-slate-900">Dedi</h4>
                             <span class="text-xs text-slate-500">21 Tahun</span>
                         </div>
-                        <img src="/assets/alumni-dafi.png" alt="Foto Dedi" class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md">
+                        <img src="/assets/alumni-dafi.png" alt="Foto Dedi"
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md">
                     </div>
                 </div>
 
                 <!-- Testimoni 2 (Tengah - Featured) -->
-                <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10 flex flex-col justify-between shadow-2xl shadow-slate-900/25 hover:-translate-y-2 transition-all duration-300 border border-slate-800 lg:scale-[1.03] z-10">
+                <div
+                    class="bg-slate-900 text-white rounded-2xl p-8 md:p-10 flex flex-col justify-between shadow-2xl shadow-slate-900/25 hover:-translate-y-2 transition-all duration-300 border border-slate-800 lg:scale-[1.03] z-10">
                     <span class="font-serif text-6xl text-amber-500 opacity-30 -mb-6 -mt-4 block">“</span>
                     <p class="text-[1.05rem] leading-relaxed text-slate-200 font-medium mb-8">
-                        Saya Memperoleh Banyak Ilmu, Pengalaman Berharga, Serta Kesempatan Untuk Berkontribusi Langsung Di Lingkungan Kerja.
+                        Saya Memperoleh Banyak Ilmu, Pengalaman Berharga, Serta Kesempatan Untuk Berkontribusi Langsung
+                        Di Lingkungan Kerja.
                     </p>
                     <div class="flex items-center justify-between border-t border-slate-800 pt-5">
                         <div class="flex flex-col">
                             <h4 class="font-sans font-bold text-white">Amanda Zuhra</h4>
                             <span class="text-xs text-slate-400">21 Tahun</span>
                         </div>
-                        <img src="/assets/alumni-amanda.png" alt="Foto Amanda Zuhra" class="w-14 h-14 rounded-full object-cover border-2 border-slate-800 shadow-md">
+                        <img src="/assets/alumni-amanda.png" alt="Foto Amanda Zuhra"
+                            class="w-14 h-14 rounded-full object-cover border-2 border-slate-800 shadow-md">
                     </div>
                 </div>
 
                 <!-- Testimoni 3 (Kanan) -->
-                <div class="bg-slate-50 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-slate-100/50">
+                <div
+                    class="bg-slate-50 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-slate-100/50">
                     <span class="font-serif text-6xl text-blue-500 opacity-20 -mb-6 -mt-4 block">“</span>
                     <p class="text-[1.05rem] leading-relaxed text-slate-700 font-medium mb-8">
                         Pengalaman Magang Ini Menjadi Langkah Awal Yang Sangat Berharga Dalam Membangun Karier Saya.
@@ -119,7 +153,8 @@
                             <h4 class="font-sans font-bold text-slate-900">M. Dafi</h4>
                             <span class="text-xs text-slate-500">21 Tahun</span>
                         </div>
-                        <img src="/assets/alumni-dafi.png" alt="Foto M. Dafi" class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md">
+                        <img src="/assets/alumni-dafi.png" alt="Foto M. Dafi"
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md">
                     </div>
                 </div>
             </div>
@@ -130,23 +165,35 @@
     <section class="bg-slate-50 py-24 px-6" id="bidang">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="font-sans text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Pilihan Bidang Yang Tersedia</h2>
+                <h2 class="font-sans text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Pilihan Bidang
+                    Yang Tersedia</h2>
                 <p class="text-base text-slate-500 max-w-2xl mx-auto mt-4 leading-relaxed">
-                    Temukan Bidang Magang Yang Sesuai Dengan Jurusan Dan Minatmu. Kembangkan Keterampilan, Perluas Wawasan, Dan Raih Pengalaman Berharga Bersama Para Profesional Di Bidangnya.
+                    Temukan Bidang Magang Yang Sesuai Dengan Jurusan Dan Minatmu. Kembangkan Keterampilan, Perluas
+                    Wawasan, Dan Raih Pengalaman Berharga Bersama Para Profesional Di Bidangnya.
                 </p>
             </div>
-            
+
             <!-- Dynamic Grid (JS Injected) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12" id="bidang-container">
                 <!-- Skeleton/Fallback Loading State -->
-                <div class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">Loading data bidang...</div>
-                <div class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">Loading data bidang...</div>
-                <div class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">Loading data bidang...</div>
-                <div class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">Loading data bidang...</div>
+                <div
+                    class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">
+                    Loading data bidang...</div>
+                <div
+                    class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">
+                    Loading data bidang...</div>
+                <div
+                    class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">
+                    Loading data bidang...</div>
+                <div
+                    class="animate-pulse bg-white border border-slate-150 rounded-2xl h-56 flex items-center justify-center text-slate-400 font-medium">
+                    Loading data bidang...</div>
             </div>
 
             <div class="text-center mt-12">
-                <button class="px-8 py-3 rounded-full border-2 border-slate-900 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-all duration-300 text-sm" id="btn-lihat-semua">Lihat Semua</button>
+                <button
+                    class="px-8 py-3 rounded-full border-2 border-slate-900 text-slate-900 font-bold hover:bg-slate-900 hover:text-white transition-all duration-300 text-sm"
+                    id="btn-lihat-semua">Lihat Semua</button>
             </div>
         </div>
     </section>
@@ -157,19 +204,24 @@
             <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
                 <!-- Left Side: Header & CTA -->
                 <div class="lg:sticky lg:top-28">
-                    <h2 class="font-sans text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight">
+                    <h2
+                        class="font-sans text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4 tracking-tight">
                         Pertanyaan Yang<br><span class="text-blue-600">Sering Ditanyakan</span>
                     </h2>
                     <p class="text-slate-500 mb-8 text-base font-medium">Masih memiliki pertanyaan?</p>
-                    <button class="px-8 py-3.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-300 shadow-md shadow-slate-900/10 text-sm" id="btn-hubungi-kami">
+                    <button
+                        class="px-8 py-3.5 rounded-full bg-slate-900 text-white font-bold hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-300 shadow-md shadow-slate-900/10 text-sm"
+                        id="btn-hubungi-kami">
                         Hubungi Kami
                     </button>
                 </div>
-                
+
                 <!-- Right Side: Accordion Container -->
                 <div class="flex flex-col gap-4" id="faq-container">
                     <!-- Skeleton/Fallback Loading State -->
-                    <div class="animate-pulse bg-slate-50 border border-slate-100 rounded-xl h-14 flex items-center justify-center text-slate-400">Memuat pertanyaan...</div>
+                    <div
+                        class="animate-pulse bg-slate-50 border border-slate-100 rounded-xl h-14 flex items-center justify-center text-slate-400">
+                        Memuat pertanyaan...</div>
                 </div>
             </div>
         </div>
@@ -185,51 +237,82 @@
                         <img src="/assets/logo.png" alt="Logo Diskominfo Kukar" class="h-10 w-auto">
                         <div class="flex flex-col text-white">
                             <span class="font-sans font-extrabold text-xl leading-none">Diskominfo</span>
-                            <span class="text-[10px] font-semibold text-slate-500 tracking-wider">KAB. KUTAI KARTANEGARA</span>
+                            <span class="text-[10px] font-semibold text-slate-500 tracking-wider">KAB. KUTAI
+                                KARTANEGARA</span>
                         </div>
                     </a>
                 </div>
-                
+
                 <div class="flex flex-col gap-4">
                     <h5 class="font-sans text-sm font-bold text-white mb-2 uppercase tracking-wider">Navigasi</h5>
                     <ul class="flex flex-col gap-3 text-sm">
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Pilar</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Kolaborasi</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Event</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Riset</a></li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Pilar</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Kolaborasi</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Event</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Riset</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col gap-4">
                     <h5 class="font-sans text-sm font-bold text-white mb-2 uppercase tracking-wider">Navigasi</h5>
                     <ul class="flex flex-col gap-3 text-sm">
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Digital</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Berita</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Sektoral</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Profil</a></li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Digital</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Berita</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Sektoral</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Profil</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col gap-4">
                     <h5 class="font-sans text-sm font-bold text-white mb-2 uppercase tracking-wider">Sosial Media</h5>
                     <ul class="flex flex-col gap-3 text-sm">
-                        <li><a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Instagram</a></li>
-                        <li><a href="https://facebook.com" target="_blank" rel="noopener" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Facebook</a></li>
-                        <li><a href="https://tiktok.com" target="_blank" rel="noopener" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Tiktok</a></li>
-                        <li><a href="https://youtube.com" target="_blank" rel="noopener" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Youtube</a></li>
+                        <li><a href="https://instagram.com" target="_blank" rel="noopener"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Instagram</a>
+                        </li>
+                        <li><a href="https://facebook.com" target="_blank" rel="noopener"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Facebook</a>
+                        </li>
+                        <li><a href="https://tiktok.com" target="_blank" rel="noopener"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Tiktok</a>
+                        </li>
+                        <li><a href="https://youtube.com" target="_blank" rel="noopener"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Youtube</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-col gap-4">
                     <h5 class="font-sans text-sm font-bold text-white mb-2 uppercase tracking-wider">Resource</h5>
                     <ul class="flex flex-col gap-3 text-sm">
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Help Center</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Feedback</a></li>
-                        <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Tanya Jawab</a></li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Help
+                                Center</a></li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Feedback</a>
+                        </li>
+                        <li><a href="#"
+                                class="hover:text-white hover:translate-x-1 transition-all duration-300 inline-block">Tanya
+                                Jawab</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <!-- Footer Bottom -->
             <div class="border-t border-slate-900 pt-8 flex justify-center text-center text-xs text-slate-600">
                 <p>&copy; 2026 Diskominfo Kabupaten Kutai Kartanegara. Semua hak cipta dilindungi.</p>
@@ -238,63 +321,102 @@
     </footer>
 
     <!-- INTERACTIVE CONTACT MODAL -->
-    <div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[2000] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300" id="contact-modal">
-        <div class="bg-white rounded-2xl w-full max-w-lg p-8 md:p-10 shadow-2xl relative scale-90 transition-all duration-300" id="contact-modal-content">
-            <button class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-all" id="modal-close-btn">&times;</button>
+    <div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[2000] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300"
+        id="contact-modal">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-8 md:p-10 shadow-2xl relative scale-90 transition-all duration-300"
+            id="contact-modal-content">
+            <button
+                class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-all"
+                id="modal-close-btn">&times;</button>
             <h3 class="font-sans text-2xl font-extrabold text-slate-900 mb-2">Hubungi Kami</h3>
-            <p class="text-sm text-slate-500 mb-6 leading-relaxed">Kirimkan pesan Anda, dan kami akan merespons dalam 1x24 jam.</p>
-            
+            <p class="text-sm text-slate-500 mb-6 leading-relaxed">Kirimkan pesan Anda, dan kami akan merespons dalam
+                1x24 jam.</p>
+
             <form id="contact-form">
                 <div class="mb-5 flex flex-col gap-2">
-                    <label for="form-name" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Nama Lengkap</label>
-                    <input type="text" id="form-name" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-550/10 focus:ring-blue-500/10 outline-none transition-all w-full" placeholder="Masukkan nama lengkap Anda" required>
+                    <label for="form-name"
+                        class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Nama Lengkap</label>
+                    <input type="text" id="form-name"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-550/10 focus:ring-blue-500/10 outline-none transition-all w-full"
+                        placeholder="Masukkan nama lengkap Anda" required>
                 </div>
                 <div class="mb-5 flex flex-col gap-2">
-                    <label for="form-email" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Email</label>
-                    <input type="email" id="form-email" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full" placeholder="nama@email.com" required>
+                    <label for="form-email"
+                        class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Email</label>
+                    <input type="email" id="form-email"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full"
+                        placeholder="nama@email.com" required>
                 </div>
                 <div class="mb-6 flex flex-col gap-2">
-                    <label for="form-message" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Pesan / Pertanyaan</label>
-                    <textarea id="form-message" rows="4" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full resize-y" placeholder="Tuliskan pertanyaan atau pesan Anda disini..." required></textarea>
+                    <label for="form-message"
+                        class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Pesan /
+                        Pertanyaan</label>
+                    <textarea id="form-message" rows="4"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full resize-y"
+                        placeholder="Tuliskan pertanyaan atau pesan Anda disini..." required></textarea>
                 </div>
-                
+
                 <div class="text-sm font-semibold mb-4 px-4 py-3 rounded-lg hidden" id="form-status-msg"></div>
-                
-                <button type="submit" class="w-full py-3.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-all duration-300" id="form-submit-btn">Kirim Pesan</button>
+
+                <button type="submit"
+                    class="w-full py-3.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-all duration-300"
+                    id="form-submit-btn">Kirim Pesan</button>
             </form>
         </div>
     </div>
 
     <!-- INTERACTIVE REGISTRATION MODAL -->
-    <div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[2000] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300" id="register-modal">
-        <div class="bg-white rounded-2xl w-full max-w-lg p-8 md:p-10 shadow-2xl relative scale-90 transition-all duration-300" id="register-modal-content">
-            <button class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-all" id="modal-close-reg-btn">&times;</button>
+    <div class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[2000] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300"
+        id="register-modal">
+        <div class="bg-white rounded-2xl w-full max-w-lg p-8 md:p-10 shadow-2xl relative scale-90 transition-all duration-300"
+            id="register-modal-content">
+            <button
+                class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 text-2xl w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 transition-all"
+                id="modal-close-reg-btn">&times;</button>
             <h3 class="font-sans text-2xl font-extrabold text-slate-900 mb-2">Pendaftaran Magang</h3>
-            <p class="text-sm text-slate-500 mb-6 leading-relaxed">Silakan isi formulir di bawah ini untuk mengajukan magang.</p>
-            
+            <p class="text-sm text-slate-500 mb-6 leading-relaxed">Silakan isi formulir di bawah ini untuk mengajukan
+                magang.</p>
+
             <form id="register-form">
                 <div class="mb-5 flex flex-col gap-2">
-                    <label for="reg-name" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Nama Lengkap</label>
-                    <input type="text" id="reg-name" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full" placeholder="Nama lengkap sesuai KTP" required>
+                    <label for="reg-name"
+                        class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Nama Lengkap</label>
+                    <input type="text" id="reg-name"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full"
+                        placeholder="Nama lengkap sesuai KTP" required>
                 </div>
                 <div class="mb-5 flex flex-col gap-2">
-                    <label for="reg-inst" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Institusi (Sekolah/Universitas)</label>
-                    <input type="text" id="reg-inst" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full" placeholder="Contoh: Universitas Mulawarman" required>
+                    <label for="reg-inst"
+                        class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Institusi
+                        (Sekolah/Universitas)</label>
+                    <input type="text" id="reg-inst"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full"
+                        placeholder="Contoh: Universitas Mulawarman" required>
                 </div>
                 <div class="mb-5 flex flex-col gap-2">
-                    <label for="reg-bidang" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Pilih Bidang Magang</label>
-                    <select id="reg-bidang" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full appearance-none bg-no-repeat" style="background-position: right 1rem center; background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-size: 1.25em;" required>
+                    <label for="reg-bidang"
+                        class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Pilih Bidang
+                        Magang</label>
+                    <select id="reg-bidang"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full appearance-none bg-no-repeat"
+                        style="background-position: right 1rem center; background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-size: 1.25em;"
+                        required>
                         <!-- Injected dynamically -->
                     </select>
                 </div>
                 <div class="mb-6 flex flex-col gap-2">
-                    <label for="reg-cv" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Link CV / Portofolio (Gdrive)</label>
-                    <input type="url" id="reg-cv" class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full" placeholder="https://drive.google.com/..." required>
+                    <label for="reg-cv" class="font-sans font-bold text-xs text-slate-950 uppercase tracking-wider">Link
+                        CV / Portofolio (Gdrive)</label>
+                    <input type="url" id="reg-cv"
+                        class="font-sans text-sm px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all w-full"
+                        placeholder="https://drive.google.com/..." required>
                 </div>
-                
+
                 <div class="text-sm font-semibold mb-4 px-4 py-3 rounded-lg hidden" id="reg-status-msg"></div>
-                
-                <button type="submit" class="w-full py-3.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-all duration-300" id="reg-submit-btn">Kirim Pengajuan</button>
+
+                <button type="submit"
+                    class="w-full py-3.5 rounded-full bg-slate-900 text-white font-bold text-sm hover:bg-slate-800 transition-all duration-300"
+                    id="reg-submit-btn">Kirim Pengajuan</button>
             </form>
         </div>
     </div>
@@ -302,4 +424,5 @@
     <!-- Vite JS Entry -->
     <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

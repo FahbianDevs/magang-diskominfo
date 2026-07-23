@@ -46,3 +46,26 @@
   color: #2563eb;
   background-color: rgba(37, 99, 235, 0.08);
 }
+
+/* ==========================================================================
+   GRADIENT BLUR FADE EFFECTS (Lihat Semua transition)
+   ========================================================================== */
+.card-blur-fade {
+  position: relative;
+}
+
+.card-blur-fade::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.85) 100%);
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  z-index: 10;
+}
+
+.card-blur-fade.normal::after {
+  opacity: 0;
+}
+

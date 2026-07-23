@@ -279,41 +279,50 @@ async function loadBidangMagang() {
     }
 
     // Helper untuk merender card bidang magang
-    const createCard = (item, isFeatured) => {
+    const createCard = (item, isFeatured, isBlurred) => {
         const isAvailable = item.status.toLowerCase() === "tersedia";
         const badgeColor = isAvailable ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800";
         
         const card = document.createElement("div");
         // Jika isFeatured true (untuk bidang ke-5), tambahkan kelas md:col-span-2 agar memenuhi baris bawah
-        card.className = `bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-305 transition-all duration-300 border border-slate-100 flex flex-col justify-between relative overflow-hidden group ${isFeatured ? 'md:col-span-2' : ''}`;
+        // Jika isBlurred true (Statistik & Persandian), tambahkan kelas blur dan gradient overlay
+        card.className = `bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border border-slate-100 flex flex-col justify-between relative overflow-hidden group ${isFeatured ? 'md:col-span-2' : ''} ${isBlurred ? 'card-blur-fade pointer-events-none select-none' : ''}`;
+        
+        if (isBlurred) {
+            card.setAttribute("data-blurred-card", "true");
+        }
+
         card.innerHTML = `
             <div class="absolute left-0 top-0 w-1.5 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-            <div>
-                <div class="flex justify-between items-start gap-4 mb-4">
-                    <h3 class="font-sans font-bold text-lg text-slate-900 leading-snug">${item.nama}</h3>
-                    <span class="px-3.5 py-1 text-[10px] font-bold rounded-full ${badgeColor} uppercase tracking-wider">${item.status}</span>
+            <div class="flex-grow flex flex-col justify-between transition-all duration-500 ${isBlurred ? 'filter blur-[1.5px] opacity-45' : ''}">
+                <div>
+                    <div class="flex justify-between items-start gap-4 mb-4">
+                        <h3 class="font-sans font-bold text-lg text-slate-900 leading-snug">${item.nama}</h3>
+                        <span class="px-3.5 py-1 text-[10px] font-bold rounded-full ${badgeColor} uppercase tracking-wider">${item.status}</span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed mb-6">${item.deskripsi}</p>
                 </div>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">${item.deskripsi}</p>
-            </div>
-            <div class="flex justify-between items-center border-t border-slate-100 pt-5 text-sm text-slate-500">
-                <div class="flex items-center gap-2 font-semibold text-slate-600">
-                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="text-blue-600">
-                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                    <span>Kuota: ${item.kuota} Orang</span>
-                </div>
-                <div class="font-medium text-slate-500">
-                    Tersedia: <span class="font-bold text-slate-900">${item.tersedia}</span>
+                <div class="flex justify-between items-center border-t border-slate-100 pt-5 text-sm text-slate-500">
+                    <div class="flex items-center gap-2 font-semibold text-slate-600">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" class="text-blue-600">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        <span>Kuota: ${item.kuota} Orang</span>
+                    </div>
+                    <div class="font-medium text-slate-500">
+                        Tersedia: <span class="font-bold text-slate-900">${item.tersedia}</span>
+                    </div>
                 </div>
             </div>
         `;
         return card;
     };
 
-    // Tampilkan 4 bidang pertama secara default
+    // Tampilkan 4 bidang pertama secara default (blurkan bidang ke-3 dan ke-4)
     const initialData = data.slice(0, 4);
     initialData.forEach(item => {
-        const card = createCard(item, false);
+        const isBlurred = (item.id === 3 || item.id === 4);
+        const card = createCard(item, false, isBlurred);
         container.appendChild(card);
     });
 
@@ -331,12 +340,23 @@ async function loadBidangMagang() {
     const btnLihatSemua = document.getElementById("btn-lihat-semua");
     if (btnLihatSemua) {
         btnLihatSemua.addEventListener("click", () => {
-            // Render sisa bidang (indeks ke-4 ke atas)
+            // 1. Kembalikan kartu yang blur (Statistik & Persandian) ke normal
+            const blurredCards = container.querySelectorAll("[data-blurred-card='true']");
+            blurredCards.forEach(card => {
+                card.classList.remove("pointer-events-none", "select-none");
+                card.classList.add("normal");
+                const inner = card.querySelector(".flex-grow");
+                if (inner) {
+                    inner.classList.remove("filter", "blur-[1.5px]", "opacity-45");
+                }
+            });
+
+            // 2. Render sisa bidang (indeks ke-4 ke atas)
             const remainingData = data.slice(4);
             remainingData.forEach((item, index) => {
                 // Untuk elemen ke-5 (indeks 0 dari sisa data), atur isFeatured = true agar tampil melebar penuh
                 const isFeatured = (index === 0); 
-                const card = createCard(item, isFeatured);
+                const card = createCard(item, isFeatured, false);
                 container.appendChild(card);
             });
 
